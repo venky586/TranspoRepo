@@ -1,0 +1,9 @@
+{% extends 'ExcelApp/HomePage.html' %}
+
+{% block content %}
+    <h1>Your search results :</h1>
+    empId  : {{searchResults.empId}}
+    cabNo  : {{searchResults.cabNo}}
+    cabSNo : {{searchResults.cabSerialNo}}
+    date   : {{searchResults.publishDate}}
+{% endblock %}
