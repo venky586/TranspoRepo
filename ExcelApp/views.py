@@ -20,9 +20,9 @@ def HomePage(request):
     return render(request, 'ExcelApp/HomePage.html', {})
 
 
-def upload(request):
-    me=User.objects.get(username='admin586')
+def upload(request):    
     if request.method == "POST":
+        me=User.objects.get(username='admin586')
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             filehandle = request.FILES['file']
