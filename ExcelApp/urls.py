@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^upload/$', views.upload, name='upload'),
-    url(r'^$', views.search, name='search'),
+	url(r'^$', views.search, name='search'),
+    url(r'^upload/$', views.upload, name='upload'),    
 ]
