@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 import django.contrib.auth.views
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
