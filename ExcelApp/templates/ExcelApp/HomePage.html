@@ -1,27 +1,110 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">  <![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
 {% load staticfiles %}
-<html>
+<html class="noIE" lang="en-US">
+<!--<![endif]-->
     <head>
-        <title>CheckMyCab</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <title>CabLookup</title>
+
+        <!-- meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+        
+        <!-- google fonts -->
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
+        
+        <!-- css -->
+        
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">       
+        <link rel="stylesheet" href="{% static 'css/layerStyle.css' %}">  
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen">
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="assets/js/html5shiv.js"></script>
+            <script src="assets/js/respond.js"></script>
+        <![endif]-->
+
+        <!--[if IE 8]>
+            <script src="assets/js/selectivizr.js"></script>
+        <![endif]-->
     </head>
-
+    
     <body>
-
-        <div class="page-header">
-            <h1><a href="">CheckMyCab</a></h1>
-        </div>
-
-        <div class="content">
-            <div class="row">
-                <div class="col-md-8">
-                {% block content %}
-                {% endblock %}
-                </div>
+        <div id="drawer-right">
+            <div class="cross text-right">
+                <a class="toggleDrawer" href="#"><i class="fa fa-times-circle fa-2x"></i></a>
             </div>
-        </div>
+            <h2>Navigate</h2>
+            <nav>
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a href="#wrapper"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio"><i class="fa fa-bookmark"></i> Admin Login</a>
+                    </li>
+                    <li>
+                        <a href="#contact"><i class="fa fa-phone-square"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social">
+                <h2>Stay Connected</h2>
+                <ul>
+                    <li><a href=""><i class="fa fa-facebook-square fa-3x"></i></a></li>                 
+                </ul>
+            </div>
+        </div><!-- #drawer-right -->
+
+        <div id="wrapper">
+            
+            <div id="header" class="content-block header-wrapper">
+                <div class="header-wrapper-inner">
+                    <!--<section class="top clearfix">
+                        <div class="pull-left">
+                            <h1><a class="logo" href="">CabLookup</a></h1>
+                        </div>
+                        <div class="pull-right">
+                            <a class="toggleDrawer" href="#"><i class="fa fa-bars fa-2x"></i></a>
+                        </div>
+                    </section>-->
+                    <section class="top clearfix">
+                        <div class="pull-right">
+                            <a class="toggleDrawer" href="upload"><i class="fa fa-user fa-2x"></i></a>
+                        </div>
+                    </section>
+                    <section class="center">                        
+                        {% block content %}
+                        
+                        {% endblock %}
+                    </section>
+
+                </div>
+            </div><!-- header -->
+
+
+            
+        </div><!--/#wrapper-->
+
+
+
+        <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+        <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.actual.min.js' %}"></script>
+        <script src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
 
     </body>
 </html>

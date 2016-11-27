@@ -1,28 +1,29 @@
-<html>
-<head>
-    <title>{{title}}</title>
-</head>
-<body>
-    <h1></h1>
+{% extends 'ExcelApp/HomePage.html' %}
 
-    <h1>{{header}}</h1>
+{% block content %}
+    <section class="center">
 
-    {% if form.errors %}
-        <p style="color: red;">
-            Please correct the error{{ form.errors|pluralize }} below.
-        </p>
-    {% endif %}
+        <div class="form">
+          <div class="forceColor"></div>
+          <div class="topbar">
+            <div class="spanColor"></div>   
+             <h1><font color="white">Upload your file</h1>                     
+            {% if form.errors %}
+                <p style="color: red;">
+                    Please correct the error{{ form.errors|pluralize }} below.
+                </p>
+            {% endif %}
+            <form action="" enctype="multipart/form-data"  method="post" class="input">        
+                <table>
+                    {{ form.as_table }}
+                </table>
+                {% csrf_token %}        
+                <h1></h1>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+            </div>  
+        </div>  
+    </section>   
+                    
+{% endblock %}
 
-    <form action="" enctype="multipart/form-data"  method="post">
-        
-        <table>
-            {{ form.as_table }}
-        </table>
-        {% csrf_token %}
-        
-        <h1></h1>
-
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>

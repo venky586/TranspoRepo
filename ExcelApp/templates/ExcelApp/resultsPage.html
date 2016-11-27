@@ -1,9 +1,22 @@
 {% extends 'ExcelApp/HomePage.html' %}
 
-{% block content %}
-    <h1>Your search results :</h1>
-    empId  : {{searchResults.empId}}
-    cabNo  : {{searchResults.cabNo}}
-    cabSNo : {{searchResults.cabSerialNo}}
-    date   : {{searchResults.publishDate}}
+{% block content %}    
+    <!--empId  : {{searchResults.empId}}-->
+    <section class="center">
+    	<div class="form">
+		  <div class="forceColor"></div>
+		  <div class="topbar">
+		  	<div class="spanColor"></div>   
+				<div class="slogan">							
+					Cab No : {{searchResults.cabSerialNo}}
+				</div>				
+				.........................................				
+				<div class="secondary-slogan">
+					Vehicle No : {{searchResults.cabNo}}
+				</div>			
+				.........................................
+			</div>  
+		</div>	
+	</section>
+        <!--date   : {{searchResults.publishDate}}-->
 {% endblock %}

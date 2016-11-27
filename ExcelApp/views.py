@@ -12,7 +12,8 @@ class UploadFileForm(forms.Form):
 
 
 class SearchForm(forms.Form):
-    my_emp_id = forms.CharField()
+    my_emp_id = forms.CharField(label='', 
+                    widget=forms.TextInput(attrs={'placeholder': 'Your Employee ID', 'class':'form-control form-control-white', 'required':'True'}))
 
 
 def HomePage(request):
@@ -47,9 +48,7 @@ def upload(request):
         request,
         'ExcelApp/upload_form.html',
         {
-            'form': form,
-            'title': 'Cab details upload',
-            'header': ('Please upload cab details file : ')
+            'form': form,            
         })
 
 

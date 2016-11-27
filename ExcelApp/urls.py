@@ -3,7 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.HomePage, name='HomePage'),
     url(r'^upload/$', views.upload, name='upload'),
-    url(r'^search/$', views.search, name='search'),
+    url(r'^$', views.search, name='search'),
 ]
