@@ -187,13 +187,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1em;
   font-family: 'Nixie One';
   color: white;
+  font-weight: bold;
 }
 
 #header .secondary-slogan {
   font-size: 1.6em;
-  color: rgba(255,255,255,.5);
+  color: white;
   line-height: 1em;
-  font-family: 'Alegreya SC';
+  font-family: 'Nixie One';
 }
 
 #header .bottom {
