@@ -21,7 +21,7 @@ def HomePage(request):
 
 
 def upload(request):
-    me=User.objects.get(username='admin')
+    me=User.objects.get(username='admin586')
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
