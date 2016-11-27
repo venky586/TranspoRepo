@@ -5,6 +5,7 @@ from dataservice.xldata import get_xl_data
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 
 class UploadFileForm(forms.Form):
@@ -20,6 +21,7 @@ def HomePage(request):
     return render(request, 'ExcelApp/HomePage.html', {})
 
 
+@login_required
 def upload(request):    
     if request.method == "POST":
         me=User.objects.get(username='admin586')
@@ -56,8 +58,6 @@ def search(request):
     if request.method == 'POST': # If the form has been submitted...
         form = SearchForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
-            # Process the data in form.cleaned_data
-            # ...
             empId=form.cleaned_data['my_emp_id']
             cabdetails_obj=get_object_or_404(CabDetails.objects.filter(empId=empId))
             print(cabdetails_obj.cabSerialNo)

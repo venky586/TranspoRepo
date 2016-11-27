@@ -7,7 +7,9 @@
           <div class="forceColor"></div>
           <div class="topbar">
             <div class="spanColor"></div>   
-             <h1><font color="white">Upload your file</h1>                     
+            <h1><font color="white">Upload cab details sheet</h1>                     
+            <h1>""</h1>   
+            
             {% if form.errors %}
                 <p style="color: red;">
                     Please correct the error{{ form.errors|pluralize }} below.
@@ -19,7 +21,7 @@
                 </table>
                 {% csrf_token %}        
                 <h1></h1>
-                <input type="submit" value="Submit" class="submit">
+                <input type="submit" value="login" style="background-color: #4CAF50;border: none;color: white;padding: 5px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;"/>
             </form>
             </div>  
         </div>  
