@@ -59,7 +59,12 @@ def search(request):
         form = SearchForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             empId=form.cleaned_data['my_emp_id']
-            cabdetails_obj=get_object_or_404(CabDetails.objects.filter(empId=empId))
+            #cabdetails_obj=get_object_or_404(CabDetails.objects.filter(empId=empId))
+            try:
+                 instance = CabDetails.objects.get(empId=empId)
+            except CabDetails.DoesNotExist:
+                 return render(request,'ExcelApp/errPage.html')
+           
             print(cabdetails_obj.cabSerialNo)
             print(cabdetails_obj.empId)
             print(cabdetails_obj.cabNo)
